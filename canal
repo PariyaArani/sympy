@@ -1,0 +1,22 @@
+import sympy as sp
+
+# Define the variables
+u, k, n = sp.symbols('u k n')
+
+# Define the integrand
+integrand = sp.sqrt(u**2 + 1) * u**(- (n + 2) / (n - 1))
+
+# Perform the integration
+integral_result = sp.integrate(integrand, (u, 0, u))
+
+# Define the constant factor
+constant_factor = 1 / (k * n * (n - 1))
+
+# Multiply the integral result by the constant factor
+result = constant_factor * integral_result
+
+# Simplify the result
+result = sp.simplify(result)
+
+# Output the result
+print(result)
